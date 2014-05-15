@@ -25,7 +25,6 @@ endif
 
 function! SyntaxCheckers_puppet_puppetlint_IsAvailable() dict
     return
-        \ executable("puppet") &&
         \ executable(self.getExec()) &&
         \ syntastic#util#versionIsAtLeast(syntastic#util#getVersion(
         \       self.getExecEscaped() . ' --version 2>' . syntastic#util#DevNull()), [0,1,10])
